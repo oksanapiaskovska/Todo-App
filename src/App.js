@@ -1,8 +1,7 @@
 import React from 'react';
-import './styles/test.scss';
 import { Route, BrowserRouter } from 'react-router-dom';
-import TodoListContainer from './components/TodoListContainer';
-import Login from './components/Login';
+import TodoListContainer from './containers/TodoListContainer';
+import Login from './containers/Login';
 
 const App = () => {
   return (
