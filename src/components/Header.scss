@@ -1,0 +1,68 @@
+$header-background: #2c76b9;
+$light-theme: #f4f4f4;
+$dark-theme: #777;
+
+%container-spaced {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Regular.ttf');
+}
+
+* {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  background-color: $header-background;
+  height: 60px;
+  color: $light-theme;
+  justify-content: space-evenly
+}
+
+.header-left {
+  @extend %container-spaced;
+  width: 200px;
+
+  i {
+    font-size: 25px;
+  }
+}
+
+.header-right {
+  @extend %container-spaced;
+  width: 900px;
+
+  .user-avatar {
+    font-size: 45px;
+  }
+
+  .input-wrp {
+    background-color: $light-theme;
+    border: 1px solid $light-theme;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: $dark-theme;
+  }
+
+  .search-input {
+    width: 300px;
+    height: 25px; 
+    padding-left: 10px;
+    border: none;
+    background-color: $light-theme;
+    font-size: 14px;
+  }
+
+  .search-input::placeholder {
+    color: $dark-theme;
+  }
+}
