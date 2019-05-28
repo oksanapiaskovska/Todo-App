@@ -2,12 +2,6 @@ $header-background: #2c76b9;
 $light-theme: #f4f4f4;
 $dark-theme: #777;
 
-%container-spaced {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 @font-face {
   font-family: 'Raleway';
   src: url('../fonts/Raleway-Regular.ttf');
@@ -21,31 +15,45 @@ $dark-theme: #777;
 }
 
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-rows: 60px;
+  grid-template-areas: 
+    'header-left header-right';
   background-color: $header-background;
-  height: 60px;
   color: $light-theme;
-  justify-content: space-evenly
+  grid-area: header;
 }
 
 .header-left {
-  @extend %container-spaced;
-  width: 200px;
+  align-self: center;
+  grid-area: header-left;
+
+  h2 {
+    margin-left: 20px;
+    display: inline-block;
+  }
 
   i {
+    margin-left: 40px;
     font-size: 25px;
   }
 }
 
 .header-right {
-  @extend %container-spaced;
-  width: 900px;
+  grid-area: header-right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   .user-avatar {
     font-size: 45px;
+    margin-right: 40px;
   }
 
   .input-wrp {
+    height: 40px;
+    width: 250px;
     background-color: $light-theme;
     border: 1px solid $light-theme;
     border-radius: 5px;
@@ -54,7 +62,6 @@ $dark-theme: #777;
   }
 
   .search-input {
-    width: 300px;
     height: 25px; 
     padding-left: 10px;
     border: none;
@@ -66,4 +73,8 @@ $dark-theme: #777;
   .search-input::placeholder {
     color: $dark-theme;
   }
+}
+
+.header-right > div {
+  display: inline-block;
 }

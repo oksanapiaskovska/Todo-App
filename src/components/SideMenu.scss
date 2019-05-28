@@ -1,0 +1,71 @@
+$hover-color: #e5e5e5;
+
+%side-menu-box {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 240px;
+  margin: auto;
+  padding: 10px 15px;
+  font-size: 14px;
+  position: relative;
+
+  i {
+    margin-right: 15px;
+    font-size: 16px;
+  }
+}
+
+%side-menu-box:hover {
+  border-radius: 5px;
+  background-color: $hover-color;
+}
+
+%ellipsis-overflow {
+  display: inline-block;
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.side-menu-wrp {
+  grid-area: sidebar;
+}
+
+// add to common styles
+@mixin solid-line($width-value) {
+  width: $width-value;
+  height: 2px;
+  margin: auto;
+  border-top: 1px solid #949494; 
+}
+
+.side-menu-separation-line {
+  @include solid-line(250px);
+}
+
+.side-menu-items {
+  margin: 20px 0px;
+}
+
+.sidemenu-item-wrp {
+  @extend %side-menu-box;
+}
+
+.side-menu-todo-list {
+  @extend %side-menu-box;
+
+  p {
+    @extend %ellipsis-overflow;
+  }
+   
+  .options {
+    position: absolute;
+    right: 0px;
+  }
+}
+
+.btn-create-new-list {
+  @extend %side-menu-box;
+}
