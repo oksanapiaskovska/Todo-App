@@ -1,0 +1,8 @@
+.todo-list-container {
+  display: grid;
+  grid-template-columns: 300px calc(100% - 300px);
+  grid-template-rows: 60px calc(100% - 60px);
+  grid-template-areas: 
+    'header header'
+    'sidebar main';
+}

@@ -1,0 +1,62 @@
+%side-menu-box {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-left: 40px;
+  padding: 10px 0px;
+  font-size: 14px;
+  position: relative;
+
+  i {
+    margin-right: 15px;
+    font-size: 16px;
+  }
+}
+
+%ellipsis-overflow {
+  display: inline-block;
+  width: 170px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.side-menu-wrp {
+  grid-area: sidebar;
+}
+
+// add to common styles
+@mixin solid-line($width-value) {
+  width: $width-value;
+  margin: auto;
+  border-top: 1px solid #949494; 
+}
+
+.side-menu-separation-line {
+  @include solid-line(250px);
+}
+
+.side-menu-items {
+  margin: 20px 0px;
+}
+
+.sidemenu-item-wrp {
+  @extend %side-menu-box;
+}
+
+.side-menu-todo-list {
+  @extend %side-menu-box;
+
+  p {
+    @extend %ellipsis-overflow;
+  }
+   
+  .options {
+    position: absolute;
+    right: 15px;
+  }
+}
+
+.btn-create-new-list {
+  @extend %side-menu-box;
+}

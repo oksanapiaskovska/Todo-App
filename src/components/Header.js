@@ -10,7 +10,7 @@ const Header = () => {
       </div>
       <div className="header-right">
         <div className="input-wrp">
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
           <input className="search-input" placeholder="Search in task list" />
         </div>
         <div className="user-avatar">

@@ -23,9 +23,9 @@ $dark-theme: #777;
 .container {
   display: flex;
   background-color: $header-background;
-  height: 60px;
   color: $light-theme;
-  justify-content: space-evenly
+  justify-content: space-evenly;
+  grid-area: header;
 }
 
 .header-left {
